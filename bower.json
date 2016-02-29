@@ -1,0 +1,23 @@
+{
+  "name": "Speculum-Android",
+  "homepage": "https://github.com/NielsMasdorp/Speculum-Android",
+  "authors": [
+    "Niels Masdorp <nielsmasdorp@gmail.com>"
+  ],
+  "description": "Magic mirror for Android",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "Mirror",
+    "Android",
+    "Smartmirror"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
