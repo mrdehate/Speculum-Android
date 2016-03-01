@@ -1,76 +1,202 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	<!--Compiled and minified CSS-->
+	<link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css"/>
+	<!--Custom CSS-->
+	<link rel="stylesheet" href="css/site.css"/>
+	<!--Import jQuery, materialize, js-->
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/site.js"></script>
+	<!--Let browser know website is optimized for mobile-->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+	<!--Page title-->
+	<title>Speculum for Android</title>
+</head>
+<body>
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<header>
+		<div class="navbar-fixed">
+			<nav class="blue">
+				<div class="nav-wrapper container">
+					<a class="brand-logo flow-text white-text light">Speculum</a>
+					<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons white-text">menu</i></a>
 
-    <title>Speculum-android by NielsMasdorp</title>
-  </head>
+					<ul class="right hide-on-med-and-down">
+						<li><a class="nav-button" id="features" class="waves-effect white-text light">Features</a></li>
+						<li><a class="nav-button" id="voice" href="#" class="waves-effect white-text light">Voice</a></li>
+						<li><a class="nav-button" id="showcase" href="#" class="waves-effect white-text light">Showcase</a></li>
+					</ul>
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Speculum-android</h1>
-        <h2>Android application powering a magic mirror.</h2>
-        <a href="https://github.com/NielsMasdorp/Speculum-Android" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+					<ul id="mobile-nav" class="side-nav">
+						<li><a class="nav-button" id="features" class="waves-effect light">Features</a></li>
+						<li><a class="nav-button" id="voice" class="waves-effect light">Voice</a></li>
+						<li><a class="nav-button" id="showcase" class="waves-effect light">Showcase</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+	<main>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+		<div class="section no-pad-bot" id="index-banner">
+			<div class="container">
+				<br><br>
+				<h1 class="header center blue-text light">Speculum for Android</h1>
+				<div class="row center">
+					<h5 class="header col s12 light">Turn your old Android device into a magic mirror. The future is now. This is your next project.</h5>
+				</div>
+				<div class="row center">
+					<a href="https://github.com/NielsMasdorp/Speculum-Android" id="download-button" class="btn-large waves-effect waves-light blue">View on GitHub</a>
+				</div>
+				<br><br>
+			</div>
+		</div>
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
+		<div class="grey lighten-4">
+			<div class="container">
+				<div class="section">
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+					<div class="row">
+						<div class="col s12 center">
+							<h4 class="blue-text light">First and foremost</h4>
+							<p class="left-align light">I did not come up with this all by myself, the idea came to me when I saw a similar <a class="blue-text text-lighten-1" href="https://github.com/HannahMitt/HomeMirror">project</a> by Hannah Mitt. After searching some more and finding the smart mirror <a class="blue-text text-lighten-1" href="http://michaelteeuw.nl/post/80391333672/magic-mirror-part-i-the-idea-the-mirror">project</a> by Michael Teeuw I knew I wanted to make something like this. As a Android developer with some free time I decided to give it a shot. I had an old Nexus 7 from 2012 lying around doing nothing but collecting dust and wanting a new purpose in his life. Speculum, as of now, is designed for that particular device only. It might look good on your device and I might look bad. Supporting multiple screensizes is on the roadmap but as of now the easiest way is to just adjust the layouts to your specific device. More on building this application can be found in the <a class="blue-text text-lighten-1" href="https://github.com/NielsMasdorp/Speculum-Android/blob/master/README.md">GitHub Readme</a>.</p>
+						</div>
+					</div>
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+				</div>
+			</div>
+		</div>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+		<div id="features-container" class="container">
+			<div class="section">
+				<div class="row">
+					<div class="col s12 center"><h4 class="blue-text light">Features</h4></div>
+					<div class="col m6 show-on-medium-and-up hide-on-small-only">
+						<div class="col m4">
+							<h5 class="light left-feature feature">Time and Date</h5>
+							<h5 class="left-feature feature light">Current Weather</h5>
+							<h5 class="left-feature feature light">Voice Recognition</h5>
+						</div>
+						<div class="col m8">
+							<img class="responsive-img screenshot" src="img/simple_layout_framed.png">
+						</div>
+					</div>
+					<div class="col m6 show-on-medium-and-up hide-on-small-only">
+						<div class="col m8">
+							<img class="responsive-img screenshot" src="img/verbose_layout_framed.png">
+						</div>
+						<div class="col m4">
+							<h5 class="right-feature feature light">Time and Date</h5>
+							<h5 class="right-feature feature light">Weather and Forecast</h5>
+							<h5 class="right-feature feature light">Google Calendar</h5>
+							<h5 class="right-feature feature light">Reddit Post</h5>
+							<h5 class="right-feature feature light">Voice Recognition</h5>
+						</div>
+					</div>
+					<div class="col s12 show-on-small hide-on-med-and-up">
+						<div class="col s6">
+							<img class="responsive-img" src="img/simple_layout_framed.png">
+						</div>
+						<div class="col s6">
+							<img class="responsive-img" src="img/verbose_layout_framed.png">
+						</div>
+						<div class="col s12 center">
+							<i class="material-icons small">schedule</i>
+							<h5 class="mobile-feature light">Time and Date</h5>
+							<i class="material-icons small">cloud</i>
+							<h5 class="mobile-feature light">Weather and Forecast</h5>
+							<i class="material-icons small">today</i>
+							<h5 class="mobile-feature light">Google Calendar</h5>
+							<i class="material-icons small">web</i>
+							<h5 class="mobile-feature light">Reddit Post</h5>
+							<i class="material-icons small">hearing</i>
+							<h5 class="mobile-feature light">Voice Recognition</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+		<div id="voice-container" class="grey lighten-4">
+			<div class="container">
+				<div class="section">
+					<div class="row">
+						<div class="col s12">
+							<div class="col s12 l4">
+								<div class="video-container">
+									<iframe src="https://www.youtube.com/embed/bRPGOPEYoYI" frameborder="0" allowfullscreen></iframe>
+								</div>
+							</div>
+							<div class="col s12 l7 offset-l1">
+								<h4 class="blue-text light center">Voice Recognition</h4>
+								<p class="left-align light">Speculum comes with a couple of voice commands baked in. When you turn on the voice recognition and fire up your mirror say 'Hello magic mirror' to wake it! When the mirror is awake you can use a couple of commands such as a command for updating the view and telling a joke. The command phrases are fully customizable and are there merely to demonstrate the opportunities. It is very easy to integrate your owm commands into the app. You just have to change a little bit of code and write the implementation for you new custom command. For example; 'Hello magic mirror, turn on the lights for me' paired with your Philips Hue set-up in your bedroom would be a very nice idea. You can turn your old device in a full fledged home automation tool if you have the time and the fantasies, be creative! For the time being, take a look at the provided demo of the voice recognition feature. </p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-<p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+			</div>
+		</div>
+	</div>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+	<div id="showcase-container" class="container">
+		<div class="section">
+			<div class="row">
+				<div class="col s12">
+					<div class="col s12 l7">
+						<h4 class="blue-text light center">Showcase</h4>
+						<p class="left-align light">I live in The Netherlands and two-way mirrors are nearly impossible to find and if you do, very expensive. However it is possible to create the mirror yourself using plexiglass/glass and privacy foil used on windows. This will give you the desired effect but is significantly less beautiful then a real two-way mirror so if you can get your hands on those I would recommend you go that route. I used 4mm thick polished plexiglass and mirror privacy foil. I applied the foil on the plexiglass, built a little frame for the tablet and hanging mechanism and spray-painted the back pitch black (except of a square the size of the device, of course). I made a frame from wood to put around the mirror so the thing looks the real deal. The whole thing cost me maybe 30 bucks. The UI/UX designer used aluminium for his frame, giving the thing a modern look. Both finished products can be seen here. If you decide to do this project send me the end result so it can be displayed here as well!</p>
+					</div>
+					<div class="col s12 l3 offset-l1">
+						<div class="slider">
+							<ul class="slides">
+								<li>
+									<img src="img/mirror_shot1.png"> 
+								</li>
+								<li>
+									<img src="img/mirror_shot2.png">
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-        </section>
+		</div>
 
-        <aside id="sidebar">
-          <a href="https://github.com/NielsMasdorp/Speculum-Android/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/NielsMasdorp/Speculum-Android/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+	</div>
+</main>
 
-          <p class="repo-owner"><a href="https://github.com/NielsMasdorp/Speculum-Android"></a> is maintained by <a href="https://github.com/NielsMasdorp">NielsMasdorp</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
-
-  
-  </body>
+<footer id="about-container" class="page-footer blue">
+	<div class="container">
+		<div class="row">
+			<div class="col l6 s12">
+				<h5 class="white-text">About the makers</h5>
+				<p class="grey-text text-lighten-4">My name is Niels Masdorp, and I am a 24 year old software developer living in Amsterdam. I am in my final year of software engineering study and work part time as a Android/Java developer at Trifork Amsterdam. This application wouldn't be nearly as beautiful if I designed it so major props to my friend <a class="grey-text lighten-2" href="https://plus.google.com/+GijsDeWit">Gijs de Wit</a> for making this thing sexy.</p>
+			</div>
+			<div class="col l3 offset-l3 s12">
+				<h5 class="white-text">Links</h5>
+				<ul>
+					<li><iframe src="https://ghbtns.com/github-btn.html?user=NielsMasdorp&repo=Speculum-Android&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe></li>
+					<li><iframe src="https://ghbtns.com/github-btn.html?user=NielsMasdorp&repo=Speculum-Android&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+					</li>
+					<li><iframe src="https://ghbtns.com/github-btn.html?user=NielsMasdorp&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container white-text light">
+			© 2016 Niels Masdorp, All rights reserved.
+			<a class="white-text light right" href="https://opensource.org/licenses/MIT">MIT License</a>
+		</div>
+	</div>
+</footer>
+</body>
 </html>
