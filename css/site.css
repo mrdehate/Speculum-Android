@@ -12,6 +12,13 @@ p {
   #index-banner .section {
     top: 0;
   }
+
+  .video-container {
+    margin-top: 25px !important;
+  }
+  .slider {
+    margin-top: 25px !important;
+  }
 }
 
 .icon-block {
