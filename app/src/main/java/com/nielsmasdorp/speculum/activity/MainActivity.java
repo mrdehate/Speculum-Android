@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     @Nullable @BindView(R.id.tv_summary) TextView tvWeatherSummary;
     @Nullable @BindView(R.id.weather_stats_layout) LinearLayout llWeatherStatsLayout;
     @Nullable @BindView(R.id.calendar_layout) LinearLayout llCalendarLayout;
-//    @Nullable @BindView(R.id.reddit_layout) RelativeLayout rlRedditLayout;
+    @Nullable @BindView(R.id.reddit_layout) RelativeLayout rlRedditLayout;
     @Nullable @BindView(R.id.iv_forecast_weather1) ImageView ivDayOneIcon;
     @Nullable @BindView(R.id.tv_forecast_temp1) TextView tvDayOneTemperature;
     @Nullable @BindView(R.id.tv_forecast_date1) TextView tvDayOneDate;
@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     @Nullable @BindView(R.id.tv_forecast_temp4) TextView tvDayFourTemperature;
     @Nullable @BindView(R.id.tv_forecast_date4) TextView tvDayFourDate;
     @Nullable @BindView(R.id.tv_stats_wind) TextView tvWeatherWind;
-//    @Nullable @BindView(R.id.tv_stats_humidity) TextView tvWeatherHumidity;
-//    @Nullable @BindView(R.id.tv_stats_pressure) TextView tvWeatherPressure;
-//    @Nullable @BindView(R.id.tv_stats_visibility) TextView tvWeatherVisibility;
+    @Nullable @BindView(R.id.tv_stats_humidity) TextView tvWeatherHumidity;
+    @Nullable @BindView(R.id.tv_stats_pressure) TextView tvWeatherPressure;
+    @Nullable @BindView(R.id.tv_stats_visibility) TextView tvWeatherVisibility;
     @Nullable @BindView(R.id.tv_calendar_event) TextView tvCalendarEvent;
-//    @Nullable @BindView(R.id.tv_reddit_post_title) TextView tvRedditPostTitle;
- //   @Nullable @BindView(R.id.tv_reddit_post_votes) TextView tvRedditPostVotes;
+    @Nullable @BindView(R.id.tv_reddit_post_title) TextView tvRedditPostTitle;
+    @Nullable @BindView(R.id.tv_reddit_post_votes) TextView tvRedditPostVotes;
 
     @BindString(R.string.old_config_found_snackbar) String oldConfigFound;
     @BindString(R.string.old_config_found_snackbar_back) String getOldConfigFoundBack;
@@ -191,9 +191,9 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         if (!isSimpleLayout) {
             // More weather info
             this.tvWeatherWind.setText(weather.getWindInfo());
-//            this.tvWeatherHumidity.setText(weather.getHumidityInfo());
-//            this.tvWeatherPressure.setText(weather.getPressureInfo());
-//            this.tvWeatherVisibility.setText(weather.getVisibilityInfo());
+            this.tvWeatherHumidity.setText(weather.getHumidityInfo());
+            this.tvWeatherPressure.setText(weather.getPressureInfo());
+            this.tvWeatherVisibility.setText(weather.getVisibilityInfo());
             // Forecast
             this.tvDayOneDate.setText(weather.getForecast().get(0).getDate());
             this.tvDayOneTemperature.setText(weather.getForecast().get(0).getTemperature());
@@ -220,11 +220,11 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     @Override
     @SuppressWarnings("all")
     public void displayTopRedditPost(RedditPost redditPost) {
-/*        tvRedditPostTitle.setText(redditPost.getTitle());
+        tvRedditPostTitle.setText(redditPost.getTitle());
         tvRedditPostVotes.setText(redditPost.getUps() + "");
         if (this.rlRedditLayout.getVisibility() != View.VISIBLE)
             this.rlRedditLayout.setVisibility(View.VISIBLE);
-*/    }
+    }
 
     @Override
     @SuppressWarnings("all")

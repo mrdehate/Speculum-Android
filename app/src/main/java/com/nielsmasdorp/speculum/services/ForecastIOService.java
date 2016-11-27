@@ -55,7 +55,7 @@ public class ForecastIOService {
         String speedUnit = metric ? Constants.SPEED_METRIC : Constants.SPEED_IMPERIAL;
         String temperatureUnit = metric ? Constants.TEMPERATURE_METRIC : Constants.TEMPERATURE_IMPERIAL;
 
-        SimpleDateFormat dateFormatter = new SimpleDateFormat(metric ? "d MMM" : "EEE d", Locale.getDefault());
+        SimpleDateFormat dateFormatter = new SimpleDateFormat(metric ? "d MMM" : "MMM d", Locale.getDefault());
 
         // Convert degrees to cardinal directions for wind
         String[] directions = {"N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"};
@@ -67,7 +67,7 @@ public class ForecastIOService {
         for (int i = 0; i < AMOUNT_OF_DAYS_IN_FORECAST; i++) {
             DayForecast f = response.getForecast().getData().get(i+1);
             String date = dateFormatter.format(new Date((long) f.getTime() * 1000));
-            int intTemp = f.getTemperatureMax().intValue();
+            int intTemp = (f.getTemperatureMin().intValue() + f.getTemperatureMax().intValue()) / 2;
             String temp = intTemp + "º" + temperatureUnit;
             int iconId = iconGenerator.getIcon(f.getIcon());
             forecast.add(new ForecastDayWeather(iconId, temp, i == 0 ? application.getString(R.string.tomorrow) : date));
